@@ -1,0 +1,10 @@
+numpy
+jupyterlab
+jupyterlab_code_formatter
+jupytext
+black
+pandas
+plotly
+scikit-learn
+jupyter-contrib-nbextensions
+xlrd
