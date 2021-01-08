@@ -20,6 +20,7 @@ Check the results online at [data-o-klimatu](https://data-o-klimatu.netlify.app/
 - instructions for installing
 - writeup about usage
 
+- tropic days - save data (after fetching from xls) locally as well to make next load a bit faster 
 
 ## to do for publishing
 - favicon
@@ -33,10 +34,12 @@ Check the results online at [data-o-klimatu](https://data-o-klimatu.netlify.app/
 
 ## publishing notebooks
 jupyter nbconvert --template=basic --to=html --output-dir=work  notebooks/tropic_days.ipynb
+python do.py pub
+check locally (cd public python -m http.server)
 python -m pynetlify deploy_folder --site-id 92182069-95ba-4331-8a96-2e953050a314 public
 
 ## random thoughts
-currently plotly doesnt work with new jlab, has to be installed locally - https://github.com/plotly/plotly.py/issues/2994
+currently plotly extension doesnt work with new jlab, has to be installed locally - https://github.com/plotly/plotly.py/issues/2994
 
 also jedi has to be uninstalled for code completion to work (uninstall didnt help, still have to do the below)
 %config Completer.use_jedi = False
@@ -51,6 +54,7 @@ obviously, the best would be to solve it in jupyter :)
 - try adding links to nice articles about effects of warming (ie siberia natgeo)
 - amount of ppl in warm areas ? -> refugees ...
 - warming - 2020 ? looks like it got much worse ...
+- tropic days - import more stuff
 
 ## todo
 - plotly & geojson polygons 
