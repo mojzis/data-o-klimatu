@@ -1,2 +1,10 @@
  venv
- .idea
+ .idea/
+ .virtual_documents/
+ public
+ data
+ pynetlify.ini
+ .ipynb_checkpoints
+ EXT
+ work
+ *.ipynb
