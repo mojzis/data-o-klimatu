@@ -1,0 +1,11 @@
+{% extends "base.html.j2" %}
+{% block title %}Data o klimatu{% endblock %}
+{% block content %}
+    <h1>Data o klimatu</h1>
+    <p>Volně podle <a href="https://faktaoklimatu.cz/">Fakta o klimatu</a></p>
+    <ul>
+    {% for ntb in notebooks %}
+        <li><a href="{{ ntb.slug }}.html">{{ ntb.title }}</a></li>
+    {% endfor %}
+    </ul>
+{% endblock %}

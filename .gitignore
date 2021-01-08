@@ -1,11 +1,11 @@
- venv
- .idea/
- .virtual_documents/
- public
- data
- pynetlify.ini
- .ipynb_checkpoints
- EXT
- work
- *.ipynb
- __pycache__
+venv
+.idea/
+.virtual_documents/
+public
+data
+pynetlify.ini
+.ipynb_checkpoints
+EXT
+work
+*.ipynb
+__pycache__

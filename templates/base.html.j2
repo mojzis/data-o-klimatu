@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+    </style>
+    {% block customhead %}{% endblock %}
+    <script async defer data-domain="data-o-klimatu.netlify.app" src="https://plausible.io/js/plausible.js"></script>
+</head>
+<body>
+{% block bodyscript %}{% endblock %}
+<nav>{% block uppernav %}{% endblock %}</nav>
+<div>{% block content %}{% endblock %}</div>
+</body>
