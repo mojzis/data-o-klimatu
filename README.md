@@ -3,10 +3,12 @@ The data as prepared by the beatiful [faktaoklimatu](https://faktaoklimatu.cz/) 
 
 Check the results online at [data-o-klimatu](https://data-o-klimatu.netlify.app/).
 
-## how this is setup
+## how is this repository setup
 - jupyter lab
-- jupytext with synchronization, git lfs for both ipynb (is it really needed though ?)  and html files
-- a small static website where the reports could be published from lfs
+- [jupytext](https://jupytext.readthedocs.io/en/latest/index.html) synchronizes notebooks to .py files which are commited, 
+  - todo: git lfs for generated html files
+- notebooks are organized more to be lookable at by the general public - no code on the website, main chart should be the first thing the user sees 
+- deployment to netlify currently done locally, to be changed once the lfs is setup
 
 ## todo
 ### jlab
@@ -31,6 +33,7 @@ Check the results online at [data-o-klimatu](https://data-o-klimatu.netlify.app/
 - about page
 - link to github for notebook
 - some kind of styling ?
+- store html with results from nbconvert in git lfs  
 
 ## publishing notebooks
 jupyter nbconvert --template=basic --to=html --output-dir=work  notebooks/tropic_days.ipynb
@@ -49,7 +52,7 @@ https://cdnjs.cloudflare.com/ajax/libs/plotly.js/1.58.2/plotly.min.js
 obviously, the best would be to solve it in jupyter :)
 
 
-## ideas
+## ideas for charts
 - warming chart - make a comparison about how much co2 the nations produce vs how warm it gets vs how wealthy they are
 - try adding links to nice articles about effects of warming (ie siberia natgeo)
 - amount of ppl in warm areas ? -> refugees ...
