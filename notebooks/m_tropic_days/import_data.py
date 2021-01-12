@@ -5,7 +5,7 @@ def parse_sheet(city, sheet_name):
     """Imports data from the excel spreadsheet,
     melts them into "long" format (days as rows) """
     data = pd.read_excel(
-        city['file_name'],
+        f'm_tropic_days/data/{city["file_name"]}',
         sheet_name=sheet_name,
         header=3
     )

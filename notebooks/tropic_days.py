@@ -20,12 +20,13 @@
 # Data: [ČHMU](http://portal.chmi.cz/historicka-data/pocasi/denni-data/data-ze-stanic-site-RBCN)
 
 # %% cell_id="00000-ede5d12f-9c26-4202-8a81-c73345b04e05" deepnote_cell_type="code" deepnote_to_be_reexecuted=false execution_millis=895 execution_start=1609771864303 source_hash="dc007c46"
-# %load_ext autoreload
+# %reload_ext autoreload
 # %autoreload 2
 # %config Completer.use_jedi = False
 
 import pandas as pd
 import plotly.express as px
+import plotly.io as pio
 
 from m_tropic_days.charting import *
 from m_tropic_days.import_data import parse_sheet
@@ -140,7 +141,8 @@ ALL['calc_type'] = ALL.var_name.str.split('_', expand=True)[2]
 # ## Tropické a ledové dny
 
 # %%
-nice_chart_cities(ALL[ALL.calc_type != 'lch'], known_cities, cities)
+fig = nice_chart_cities(ALL[ALL.calc_type != 'lch'], known_cities, cities)
+fig
 
 # %% [markdown]
 # ## Tropické dny
@@ -153,3 +155,11 @@ chart_per_type(ALL, 'tropical', known_cities, cities)
 
 # %% cell_id="00021-1f929ebb-613f-499e-83b2-a4d2a63aff93" deepnote_cell_type="code" deepnote_to_be_reexecuted=false execution_millis=198 execution_start=1609772457009 source_hash="67fa7605"
 chart_per_type(ALL, 'ice', known_cities, cities)
+
+# %%
+with open('m_tropic_days/ogimg.png','bw') as ogim:
+    ogim.write(pio.to_image(
+        fig,format='png',
+        width=1400, 
+        height=700,
+        engine='kaleido'))

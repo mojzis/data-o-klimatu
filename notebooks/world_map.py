@@ -29,6 +29,8 @@ import plotly.graph_objects as go
 from shapely.geometry import box, Point, Polygon, LineString, LinearRing
 import shapely.ops as sho
 import plotly.graph_objects as go
+import plotly.io as pio
+
 
 # %%
 # %config Completer.use_jedi = False
@@ -216,3 +218,13 @@ def create_figure(sorted_temps, polies):
 fig = create_figure(bin_labels, polies)
 
 fig.show()
+
+# %%
+with open('m_world_map/ogimg.png','bw') as ogim:
+    ogim.write(pio.to_image(
+        fig,
+        format='png',
+        width=1400, 
+        height=700,
+        engine='kaleido'))
+
